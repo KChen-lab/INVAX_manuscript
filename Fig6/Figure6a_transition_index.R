@@ -6,8 +6,8 @@ library(ggpubr)
 
 set.seed(888)
 ######################################################Figure 6a  Transition index between MHR and nMHR###########################
-#This code needs dataset file including patient id ('meta.INVAX.Study.ID'), Timepoint, cell subset annotation, 
-#clonotype id or cdr3a+cdr3b sequence, whether patient have paired timepoints ('Match') for each CD8+ T cell.
+#This code needs dataset file including patient id, Timepoint, cell subset annotation, 
+#clonotype id or cdr3a+cdr3b sequence, whether patient have paired timepoints for each CD8+ T cell.
 #All of the information and data can be download through XXXXX.
 meta=readRDS('./cd8_meta_for_transition_index.rds')
 #
