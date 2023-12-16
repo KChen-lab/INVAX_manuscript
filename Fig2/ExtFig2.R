@@ -60,7 +60,7 @@ stat.test.MHR=stat.test
 df_paired=stat1[which(!is.na(stat1$Proportion)&stat1$Response=='nMHR'),]
 stat.test=compare_means(Proportion ~ Timepoint,df_paired,p.adjust.method = 'fdr',group.by =c('CellType','Response'),paired = TRUE)
 stat.test=stat.test %>% add_xy_position(data = df_paired,formula = Proportion ~ Timepoint)
-ggpaired(df_paired,x='Timepoint',y='Proportion',fill = 'Timepoint', line.color = "gray", line.size = 0.4,id='Patient')+ggtitle('MHR')+
+ggpaired(df_paired,x='Timepoint',y='Proportion',fill = 'Timepoint', line.color = "gray", line.size = 0.4,id='Patient')+ggtitle('nMHR')+
   facet_grid(Response~CellType,scales='free')+scale_fill_manual(values=c( "#DDCC77","#AA4499"))+xlab(label='')+stat_pvalue_manual(stat.test, label = "p.adj")+
   theme(plot.title = element_text(hjust = 0.5),legend.position = 'none')
 stat.test.nMHR=stat.test
