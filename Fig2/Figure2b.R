@@ -20,7 +20,7 @@ colnames(stat1)=c('Patient','Timepoint','CellType','Proportion')
 df_malig=stat1[which(stat1$CellType=='Malignant'&stat1$Timepoint=='Baseline'),]
 colnames(df_malig)[4]='Pre'
 df_malig=df_malig[,-c(2,3)]
-df_malig$Post=stat1$Proportion[which(stat1$CellType=='Malignant'&stat1$Timepoint=='OnTreatment')]
+df_malig$Post=stat1$Proportion[which(stat1$CellType=='Malignant'&stat1$Timepoint=='OnInduction')]
 
 df_malig$ViableChange=as.numeric(as.character(response[match(df_malig$Patient,response$Patient),'ViableChange']))
 df_malig$Response=as.character(response[match(df_malig$Patient,response$Patient),'Response'])
