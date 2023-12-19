@@ -7,7 +7,7 @@ library(rstatix)
 library(ggpubr)
 library(reshape2)
 
-stat1=read_xlsx('~/Documents/ChenLab/Projects/HeadNeck/final.figures/Manuscript/1207/Supplementary Tables 6-13_v3.xlsx',
+stat1=read_xlsx('./Supplementary Tables 6-13_v3.xlsx',
                 sheet='Supplementary Table 7',range = 'A3:AE73')
 response=read_xlsx('../DataShare/response.xlsx')
 response=as.data.frame(response)
