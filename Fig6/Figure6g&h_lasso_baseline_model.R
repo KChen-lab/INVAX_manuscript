@@ -15,7 +15,7 @@ df=cbind(feature_data,dummyresult)
 df$tobacco[which(df$tobacco==2)]=1
 df <- df[!is.na(df$meta.Viable.change.percent), ]
 #remove 33 because no baseline data, remove 26 because very few t cells at baseline
-df <- df[which(df$INVAX!='INVAX026'&df$INVAX!='INVAX033'),]
+df <- df[which(df$INVAX!='26'&df$INVAX!='33'),]
 df$Gender <- ifelse(df$Gender == 1, 0, 1)
 
 y <- df$meta.Viable.change.percent
