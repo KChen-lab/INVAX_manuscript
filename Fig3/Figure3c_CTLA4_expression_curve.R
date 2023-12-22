@@ -62,8 +62,8 @@ sce <- fitGAM(as.matrix(countMatrix), pseudotime = pseudotime,
 
 # Plot fitted models & CIs
 model <- sce$gamList$n1
-# p_obj <- plot(model, shade = TRUE, seWithMean = TRUE, residuals = TRUE, 
-#               pch = 16, cex = 0.8)
+ p_obj <- plot(model, shade = TRUE, seWithMean = TRUE, residuals = TRUE, 
+              pch = 16, cex = 0.8)
 # p_obj
 p1 <- as.data.frame(p_obj[[1]][c("x", "se", "fit", "raw", "p.resid")])[1:100, ]
 p2 <- as.data.frame(p_obj[[2]][c("x", "se", "fit", "raw", "p.resid")])[101:200, ]
