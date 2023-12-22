@@ -1,7 +1,13 @@
 
+###################################This code uses fisher's exact test for count table to
+###################################test whether a clonotype has changed their 
+###################################distribution over CD8 T cells significantly upon induction
 
-wholevdj.dat=readRDS('~/Documents/ChenLab/Projects/HeadNeck/final.figures/Manuscript/Data and code/SeuratObjects for reviewers/VDJ_data.rds')
-meta=readRDS('~/Documents/ChenLab/Projects/HeadNeck/final.figures/Manuscript/Data and code/SeuratObjects for reviewers/CD8_metadata.rds')
+library(stats)
+
+
+wholevdj.dat=readRDS('./VDJ_data.rds')
+meta=readRDS('./CD8_metadata.rds')
 
 
 #map scTCR data to cd8 data
@@ -13,9 +19,6 @@ meta[ind2,'Expansion_annot']=wholevdj.dat[ind1,'Expansion_annot']
 meta[ind2,'pseudoclonotype']=wholevdj.dat$pseudo_clonotype[ind1]
 meta[ind2,'vdj_barcode']=wholevdj.dat$barcode[ind1]
 
-
-load("~/Documents/ChenLab/Projects/HeadNeck/Trajectory/heatmap_test_contract_sig.RData")
-meta_large <- readRDS("~/Documents/ChenLab/Projects/HeadNeck/final.figures/Manuscript/Data and code/cd8_meta_newexpansion.rds")
 meta <- meta[, c("pseudoclonotype", "CellSubset", "Timepoint", "Expansion_annot")]
 meta <- meta[complete.cases(meta), ]
 meta <- subset(meta, Expansion_annot == "Expanded_Sig")

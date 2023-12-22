@@ -1,7 +1,15 @@
 library(rstatix)
+library(stats)
+
+
+
+###################################This code uses fisher's exact test for a 2*2 count table to
+###################################test whether a clonotype has changed their 
+###################################proportion significantly upon induction
+
 
 #################################The rds file only contained annotation for expansion, you can try to run the calculation again using this code ##################
-wholevdj.dat=readRDS('~/Documents/ChenLab/Projects/HeadNeck/final.figures/Manuscript/Data and code/SeuratObjects for reviewers/VDJ_data.rds')
+wholevdj.dat=readRDS('./VDJ_data.rds')
 
 raw_tcr_count=table(sapply(strsplit(wholevdj.dat$barcode,'_'),'[',1))
 tt=table(wholevdj.dat$INVAX.Study.ID,wholevdj.dat$Timepoint)
